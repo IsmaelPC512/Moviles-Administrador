@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#3F51B5</color>
+    <color name="withe">#FFFFFFFF</color>
+    <color name="background_component">#00A7E1</color>
+    <color name="background_app">#003459</color>
+    <color name="background_component_selected">#007EA7</color>
+    <color name="background_button">#3F51B5</color>
+
+</resources>
