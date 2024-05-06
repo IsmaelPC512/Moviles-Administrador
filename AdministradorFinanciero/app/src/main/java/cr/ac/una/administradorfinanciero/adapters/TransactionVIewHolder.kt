@@ -9,9 +9,9 @@ import cr.ac.una.administradorfinanciero.entities.Transaction
 
 class TransactionVIewHolder(view: View): ViewHolder(view) {
 
-    val date = view.findViewById<TextView>(R.id.tvFecha)
-    val type = view.findViewById<TextView>(R.id.tvTipo)
-    val money = view.findViewById<TextView>(R.id.tvMonto)
+    val date = view.findViewById<TextView>(R.id.tvDate)
+    val type = view.findViewById<TextView>(R.id.tvType)
+    val money = view.findViewById<TextView>(R.id.tvMoney)
     val image = view.findViewById<TextView>(R.id.tvImage)
 
     @SuppressLint("SetTextI18n")

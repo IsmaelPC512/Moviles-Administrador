@@ -1,17 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.CreatorFragment"
-    android:background="@color/background_app"
-    android:id="@+id/creatorFragment">
+    android:background="@color/background_app">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="creador"
-        android:layout_gravity="center"
-        android:textColor="@color/white" />
+        android:layout_marginTop="40dp"
+        android:text="Nuevo Movimineto Financiero"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Ingrese el monto gastado"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/etMoney"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <EditText
+        android:id="@+id/etMoney"
+        android:layout_width="308dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Ingrese la fecha del movimineto"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/cvDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CalendarView
+        android:id="@+id/cvDate"
+        android:layout_width="284dp"
+        android:layout_height="298dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/chboxCredito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    <CheckBox
+        android:id="@+id/chboxDebito"
+        android:layout_width="110dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="96dp"
+        android:text="Debito"
+        android:textColor="@color/white"
+        android:background="@color/background_component_selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/chboxCredito"
+        android:layout_width="107dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="96dp"
+        android:text="Credito"
+        android:textColor="@color/white"
+        android:background="@color/background_component_selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toEndOf="@+id/chboxDebito" />
+
+    <Button
+        android:id="@+id/btnSendTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Ingresar Monto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

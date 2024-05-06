@@ -1,59 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/transactionLogFragment"
     android:background="@color/background_app">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/background_app"
-        android:orientation="vertical"
-        tools:context=".ToDoApp.ToDoAppActivity">
+    <TextView
+        android:id="@+id/tvTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Control Financiero"
+        android:textAllCaps="true"
+        android:textColor="@color/withe"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rvTransaction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="44dp"
-            android:text="Control Financiero"
-            android:textAllCaps="true"
-            android:textColor="@color/withe"
-            android:textSize="35sp"
-            android:textStyle="bold">
+    </TextView>
 
-        </TextView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransaction"
+        android:layout_width="375dp"
+        android:layout_height="430dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTittle">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:text="Categorias"
-            android:textAllCaps="true"
-            android:textColor="@color/withe">
+    </androidx.recyclerview.widget.RecyclerView>
 
-        </TextView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85">
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTransaction"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="31dp"
-            android:layout_marginTop="16dp">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.Guideline>
 
     <Button
         android:id="@+id/btnAddTransaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="40dp"
+        app:layout_constraintStart_toEndOf="@+id/btnReturn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:text="Agregar">
 
     </Button>
@@ -62,10 +60,12 @@
         android:id="@+id/btnReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="start|bottom"
-        android:layout_margin="40dp"
-        android:text="Salir">
+        android:text="Salir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddTransaction"
+        app:layout_constraintTop_toTopOf="@id/divider"
+        app:layout_constraintBottom_toBottomOf="parent">
 
     </Button>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
